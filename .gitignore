@@ -1,0 +1,19 @@
+# MkDocs
+site/
+
+# Reference materials (not tracked)
+reference/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log

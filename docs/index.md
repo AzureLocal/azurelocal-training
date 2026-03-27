@@ -1,5 +1,8 @@
 # Training
 
+!!! warning "Placeholder Content"
+    The information in this section is currently placeholder data and is not yet complete. Content is actively being developed.
+
 ## Overview
 
 Training covers core day-to-day operations for managing workloads on Azure Local using Azure Arc.

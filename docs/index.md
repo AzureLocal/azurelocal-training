@@ -41,17 +41,17 @@ The curriculum is organized into 11 modules spanning the full Azure Local operat
 
 | Module | Title | Level | Duration | Description |
 |--------|-------|-------|----------|-------------|
-| **00** | [Introduction to Azure Local](00-introduction/index.md) | L100 | 2 hours | What is Azure Local, positioning vs. Windows Server, architecture overview, common use cases |
-| **01** | [Management](01-management/index.md) | L200 | 3 hours | Azure Portal navigation, PowerShell/CLI operations, Azure Arc as the management fabric |
-| **02** | [Compute](02-compute/index.md) | L200-300 | 4 hours | Arc VM deployment and lifecycle, VM images and gallery, live migration, high availability |
-| **03** | [Storage](03-storage/index.md) | L200-300 | 4 hours | Storage Spaces Direct, disk types (HDD/SSD/NVMe/PM), cache tiers, fault tolerance, resync, monitoring |
-| **04** | [Networking](04-networking/index.md) | L200-300 | 4 hours | Network ATC, virtual switch, RDMA/SR-IOV, logical networks for Arc VMs, Arc-managed SDN |
-| **05** | [Hybrid Services](05-hybrid-services/index.md) | L200-300 | 4 hours | Azure Site Recovery, Azure Backup, Azure Monitor, Azure Update Manager, Defender for Cloud |
-| **06** | [Security](06-security/index.md) | L200-300 | 3 hours | Secured-core server, BitLocker encryption, security baselines (SMI), drift protection, WDAC, network security |
-| **07** | [Azure Kubernetes Service](07-azure-kubernetes/index.md) | L200-300 | 3 hours | AKS on Azure Local architecture, deploying AKS clusters, managing containerized workloads |
-| **08** | [Azure Virtual Desktop](08-azure-virtual-desktop/index.md) | L200-300 | 3 hours | AVD on Azure Local architecture, deploying session hosts and host pools, FSLogix, scaling |
-| **09** | [Operations](09-operations/index.md) | L200-300 | 4 hours | Monitoring and alerting, troubleshooting (VMs, clustering, S2D, networking), backup/restore, disaster recovery |
-| **10** | [Cloud Deployment](10-cloud-deployment/index.md) | L200 | 3 hours | Azure Portal cloud deployment, prerequisites, hardware/network requirements, Arc registration flow |
+| **00** | Introduction to Azure Local | L100 | 2 hours | What is Azure Local, positioning vs. Windows Server, architecture overview, common use cases |
+| **01** | Management | L200 | 3 hours | Azure Portal navigation, PowerShell/CLI operations, Azure Arc as the management fabric |
+| **02** | Compute | L200-300 | 4 hours | Arc VM deployment and lifecycle, VM images and gallery, live migration, high availability |
+| **03** | Storage | L200-300 | 4 hours | Storage Spaces Direct, disk types (HDD/SSD/NVMe/PM), cache tiers, fault tolerance, resync, monitoring |
+| **04** | Networking | L200-300 | 4 hours | Network ATC, virtual switch, RDMA/SR-IOV, logical networks for Arc VMs, Arc-managed SDN |
+| **05** | Hybrid Services | L200-300 | 4 hours | Azure Site Recovery, Azure Backup, Azure Monitor, Azure Update Manager, Defender for Cloud |
+| **06** | Security | L200-300 | 3 hours | Secured-core server, BitLocker encryption, security baselines (SMI), drift protection, WDAC, network security |
+| **07** | Azure Kubernetes Service | L200-300 | 3 hours | AKS on Azure Local architecture, deploying AKS clusters, managing containerized workloads |
+| **08** | Azure Virtual Desktop | L200-300 | 3 hours | AVD on Azure Local architecture, deploying session hosts and host pools, FSLogix, scaling |
+| **09** | Operations | L200-300 | 4 hours | Monitoring and alerting, troubleshooting (VMs, clustering, S2D, networking), backup/restore, disaster recovery |
+| **10** | Cloud Deployment | L200 | 3 hours | Azure Portal cloud deployment, prerequisites, hardware/network requirements, Arc registration flow |
 
 **Total curriculum duration: ~37 hours** (4 full days + wrap-up, or delivered as modular tracks)
 
@@ -127,16 +127,16 @@ All labs support **two environment options**: an Azure Local sandbox/jumpstart e
 
 | Lab | Title | Maps to Module |
 |-----|-------|----------------|
-| **01** | [Deploy an Arc VM](labs/lab-01-deploy-arc-vm.md) | Module 02: Compute |
-| **02** | [Manage Arc VMs](labs/lab-02-manage-arc-vm.md) | Module 02: Compute |
-| **03** | [Storage Operations](labs/lab-03-storage-operations.md) | Module 03: Storage |
-| **04** | [Networking Configuration](labs/lab-04-networking.md) | Module 04: Networking |
-| **05** | [Azure Site Recovery](labs/lab-05-site-recovery.md) | Module 05: Hybrid Services |
-| **06** | [Backup and Restore](labs/lab-06-backup-restore.md) | Module 05: Hybrid Services |
-| **07** | [Azure Update Manager](labs/lab-07-update-manager.md) | Module 05: Hybrid Services |
-| **08** | [Monitoring and Alerting](labs/lab-08-monitoring.md) | Module 09: Operations |
-| **09** | [Deploy an AKS Cluster](labs/lab-09-deploy-aks-cluster.md) | Module 07: Azure Kubernetes |
-| **10** | [AVD Deployment](labs/lab-10-avd-deployment.md) | Module 08: Azure Virtual Desktop |
+| **01** | Deploy an Arc VM | Module 02: Compute |
+| **02** | Manage Arc VMs | Module 02: Compute |
+| **03** | Storage Operations | Module 03: Storage |
+| **04** | Networking Configuration | Module 04: Networking |
+| **05** | Azure Site Recovery | Module 05: Hybrid Services |
+| **06** | Backup and Restore | Module 05: Hybrid Services |
+| **07** | Azure Update Manager | Module 05: Hybrid Services |
+| **08** | Monitoring and Alerting | Module 09: Operations |
+| **09** | Deploy an AKS Cluster | Module 07: Azure Kubernetes |
+| **10** | AVD Deployment | Module 08: Azure Virtual Desktop |
 
 ---
 
@@ -288,13 +288,13 @@ Covers the end-to-end cloud deployment model for Azure Local — deploying new c
 
 ## Presentations
 
-Slide decks are being created for each module, aligned 1:1 with the training content. See the [presentations tracking page](presentations/index.md) for current status and download links.
+Slide decks are being created for each module, aligned 1:1 with the training content. A presentations tracking page will be published here as decks become available.
 
 ---
 
 ## Contributing
 
-This training curriculum is an open-source project. Contributions are welcome — see the [Contributing Guide](../CONTRIBUTING.md) for details on how to submit improvements, report issues, or propose new content.
+This training curriculum is an open-source project. Contributions are welcome — see the CONTRIBUTING.md file in the repository root for details on how to submit improvements, report issues, or propose new content.
 
 ---
 
@@ -302,6 +302,6 @@ This training curriculum is an open-source project. Contributions are welcome �
 
 - [Azure Local documentation](https://learn.microsoft.com/azure-local/)
 - [Azure Arc documentation](https://learn.microsoft.com/azure/azure-arc/)
-- [Delivery Guide](delivery-guide.md) — Detailed track agendas, prerequisites, and instructor guidelines
-- [Lab Environment Setup](labs/index.md) — Sandbox and customer lab configuration
+- Delivery Guide — Detailed track agendas, prerequisites, and instructor guidelines (coming soon)
+- Lab Environment Setup — Sandbox and customer lab configuration (coming soon)
 

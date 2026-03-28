@@ -1,7 +1,7 @@
 # Azure Local Operator Training
 
 !!! warning "Under Construction"
-    This training curriculum is actively being developed. Module content, labs, and slide decks are in progress. See the [delivery guide](delivery-guide.md) for scheduling options.
+    This training curriculum is actively being developed. Module content, labs, and slide decks are in progress. A delivery guide with scheduling options is coming soon.
 
 ## Overview
 

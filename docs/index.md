@@ -7,7 +7,7 @@
 
 This curriculum provides comprehensive, hands-on training for infrastructure operators managing Azure Local clusters through the Azure Arc management plane. The training covers everything from initial cluster deployment through day-to-day operations, security hardening, hybrid Azure services, and advanced workloads like AKS and Azure Virtual Desktop.
 
-Azure Local is the successor to Azure Stack HCI. The entire curriculum is built around the modern, cloud-first management model — **Azure Portal and Azure Arc are the primary interfaces**. Legacy tools like Windows Admin Center (WAC) and System Center Virtual Machine Manager (SCVMM) are not covered.
+Azure Local is the successor to Azure Stack HCI. The entire curriculum is built around the modern, cloud-first management model — **Azure Portal and Azure Arc are the primary interfaces**. Legacy tools like Windows Admin Center (WAC) and System Center Virtual Machine Manager (Azure Local) are not covered.
 
 ---
 

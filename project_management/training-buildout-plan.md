@@ -2,7 +2,7 @@
 
 ## TL;DR
 
-Rebuild the `azurelocal-training` repo from legacy Azure Stack HCI workshop materials into a modern Azure Local operator training curriculum. The old content covers Compute, Storage, Networking, SDN, Hybrid, Security, AKS, and Troubleshooting across a 3-day modular workshop. The new curriculum retains the modular structure but reframes everything through the Azure Arc management plane, adds new Azure Local-specific topics (cloud deployment, Arc VMs, Update Manager, AKS Arc, AVD on Azure Local, Arc-managed SDN), drops obsolete tooling (SCVMM, WAC), and shifts from "on-prem admin" to "cloud-connected operator" persona.
+Rebuild the `azurelocal-training` repo from legacy Azure Stack HCI workshop materials into a modern Azure Local operator training curriculum. The old content covers Compute, Storage, Networking, SDN, Hybrid, Security, AKS, and Troubleshooting across a 3-day modular workshop. The new curriculum retains the modular structure but reframes everything through the Azure Arc management plane, adds new Azure Local-specific topics (cloud deployment, Arc VMs, Update Manager, AKS Arc, AVD on Azure Local, Arc-managed SDN), drops obsolete tooling (Azure Local, WAC), and shifts from "on-prem admin" to "cloud-connected operator" persona.
 
 ## Confirmed Decisions (from user review)
 
@@ -10,7 +10,7 @@ Rebuild the `azurelocal-training` repo from legacy Azure Stack HCI workshop mate
 - Content depth: L200-L300 core, L100 for intro only
 - Slide decks: Must be updated/created — separate task, aligned 1:1 with training modules. Placeholder pages in docs linking to new decks.
 - SDN: Cover Arc-managed SDN for Azure Local (NOT the old 8-module deep-dive)
-- SCVMM: DROP entirely
+- Azure Local: DROP entirely
 - WAC (Windows Admin Center): DROP entirely
 - PowerPoint archive: Stays in `referrence/` (archived). Docs get placeholder/links to new decks.
 - Old materials: Move to `/archive`
@@ -170,7 +170,7 @@ Replace the current placeholder with a proper landing page that includes:
 
 | Old Topic | Reason |
 |-----------|--------|
-| System Center Virtual Machine Manager (SCVMM) | Deprecated for Azure Local management |
+| System Center Virtual Machine Manager (Azure Local) | Deprecated for Azure Local management |
 | Windows Admin Center (WAC) | Dropped — Azure Portal + Arc is the management plane |
 | Azure File Sync | Not core to Azure Local operator training |
 | SDN deep-dive (8-module track) | Replaced by Arc-managed SDN overview in networking module |
@@ -293,7 +293,7 @@ Old PowerPoints in `referrence/PowerPoint/` serve as content reference for updat
 | Decision | Rationale |
 |----------|-----------|
 | **SDN** | Reduced to overview in Networking section — SDN deep-dive track (8 modules) is dropped because Azure Local is moving toward simplified Arc-based networking. Can be added back as an advanced elective later. |
-| **SCVMM** | Dropped entirely — Azure Portal + Azure Arc is the management plane for Azure Local. |
+| **Azure Local** | Dropped entirely — Azure Portal + Azure Arc is the management plane for Azure Local. |
 | **WAC** | Dropped entirely — Azure Portal + Azure Arc is the management plane for Azure Local. |
 | **Lab environment** | Both sandbox/jumpstart AND customer's own lab. Provide setup guidance for both. |
 | **PowerPoint decks** | Old decks archived. New slide decks created 1:1 with modules as a separate effort. |

@@ -1,0 +1,15 @@
+name: Add to Project
+
+on:
+  issues:
+    types: [opened, labeled]
+  pull_request:
+    types: [opened, labeled]
+
+jobs:
+  call-shared:
+    uses: AzureLocal/.github/.github/workflows/reusable-add-to-project.yml@main
+    with:
+      id-prefix: TRN
+      solution-option-id: '9c6e8126'
+    secrets: inherit

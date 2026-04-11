@@ -1,5 +1,11 @@
 # azurelocal-training
 
+![Azure Local Operator Training](docs/assets/images/azurelocal-training-banner.svg)
+
+[![Azure Local](https://img.shields.io/badge/Azure%20Local-azurelocal.cloud-0078D4?logo=microsoft-azure)](https://azurelocal.cloud)
+
+Documentation: [azurelocal.cloud](https://azurelocal.cloud) | Solutions: [Azure Local Solutions](https://azurelocal.cloud)
+
 Training materials and guides for **Azure Local** (formerly Azure Stack HCI).
 
 ---

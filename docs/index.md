@@ -1,5 +1,7 @@
 # Azure Local Operator Training
 
+![Azure Local Operator Training](assets/images/azurelocal-training-banner.svg)
+
 !!! warning "Under Construction"
     This training curriculum is actively being developed. Module content, labs, and slide decks are in progress. A delivery guide with scheduling options is coming soon.
 

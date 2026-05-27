@@ -29,7 +29,7 @@ Slide decks for each training module. Source files (.pptx) are stored in `slides
 
 ## Legacy Slides
 
-Legacy Azure Stack HCI presentation decks (pre-Azure Local rebrand) are archived in [`/referrence/PowerPoint/`](../../referrence/PowerPoint/). These are source material for the updated decks — do not use them directly in training without updating terminology and screenshots.
+Legacy Azure Stack HCI presentation decks (pre-Azure Local rebrand) are archived in [`referrence/PowerPoint/`](https://github.com/AzureLocal/azurelocal-training/tree/main/referrence/PowerPoint). These are source material for the updated decks — do not use them directly in training without updating terminology and screenshots.
 
 ## Narration Scripts
 

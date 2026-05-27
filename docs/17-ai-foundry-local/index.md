@@ -3,7 +3,7 @@
 **Level:** L300 | **Duration:** 3 hours | **Prerequisites:** Module 14 | **Hands-on:** Lab
 
 !!! note "Module Status"
-    Framework module — **content scope under research.** See [`research/ai-foundry-local.md`](../../repo-management/research/ai-foundry-local.md).
+    Framework module — **content scope under research.** See [research/ai-foundry-local.md](https://github.com/AzureLocal/azurelocal-training/blob/main/repo-management/research/ai-foundry-local.md).
 
 ## Learning Objectives (tentative)
 
@@ -33,5 +33,5 @@ IaC: Bicep templates in `labs/iac/17-ai-foundry-local/` (planned).
 ## Related Resources
 
 - [Azure AI Foundry Local](https://learn.microsoft.com/azure/ai-foundry/foundry-local/)
-- Research notes: [`research/ai-foundry-local.md`](../../repo-management/research/ai-foundry-local.md)
+- Research notes: [research/ai-foundry-local.md](https://github.com/AzureLocal/azurelocal-training/blob/main/repo-management/research/ai-foundry-local.md)
 - Slides: `slides/17-ai-foundry-local/` (planned)

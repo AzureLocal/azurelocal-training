@@ -3,7 +3,7 @@
 **Level:** L300 | **Duration:** 3 hours | **Prerequisites:** Module 14 | **Hands-on:** Lab
 
 !!! note "Module Status"
-    Framework module — **content scope under research.** See [`research/iot-operations.md`](../../repo-management/research/iot-operations.md).
+    Framework module — **content scope under research.** See [research/iot-operations.md](https://github.com/AzureLocal/azurelocal-training/blob/main/repo-management/research/iot-operations.md).
 
 ## Learning Objectives (tentative)
 
@@ -33,5 +33,5 @@ IaC: Bicep templates in `labs/iac/16-iot-operations/` (planned).
 ## Related Resources
 
 - [Azure IoT Operations](https://learn.microsoft.com/azure/iot-operations/)
-- Research notes: [`research/iot-operations.md`](../../repo-management/research/iot-operations.md)
+- Research notes: [research/iot-operations.md](https://github.com/AzureLocal/azurelocal-training/blob/main/repo-management/research/iot-operations.md)
 - Slides: `slides/16-iot-operations/` (planned)

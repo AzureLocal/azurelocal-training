@@ -1,0 +1,110 @@
+name: Validate Labs
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'docs/labs/**'
+      - 'docs/**/lab-*.md'
+      - 'labs/iac/**'
+
+jobs:
+  validate-lab-frontmatter:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Validate lab files
+        shell: bash
+        run: |
+          set -euo pipefail
+          errors=0
+
+          # Find all lab files in docs/
+          mapfile -t labs < <(find docs -type f -name 'lab-*.md' -o -path 'docs/labs/lab-*.md')
+
+          if [ "${#labs[@]}" -eq 0 ]; then
+            echo "No lab files found — skipping."
+            exit 0
+          fi
+
+          echo "Validating ${#labs[@]} lab files..."
+
+          for lab in "${labs[@]}"; do
+            echo "::group::$lab"
+
+            # Check the file is non-empty
+            if [ ! -s "$lab" ]; then
+              echo "::error file=$lab::Lab file is empty"
+              errors=$((errors+1))
+              echo "::endgroup::"
+              continue
+            fi
+
+            # Lab guides should follow the pattern: ## Step N: Title
+            if ! grep -qE '^## Step [0-9]+:' "$lab"; then
+              echo "::warning file=$lab::Lab file does not contain '## Step N:' headers — expected step structure"
+            fi
+
+            # Each lab guide should declare prerequisites
+            if ! grep -qiE '^(## Prerequisites|## Pre-requisites|\*\*Prerequisites)' "$lab"; then
+              echo "::warning file=$lab::Lab file missing a Prerequisites section"
+            fi
+
+            echo "::endgroup::"
+          done
+
+          if [ "$errors" -gt 0 ]; then
+            echo "::error::$errors lab files failed validation"
+            exit 1
+          fi
+
+  validate-iac-templates:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Azure CLI
+        uses: azure/setup-cli@v1
+        continue-on-error: true
+
+      - name: Install Bicep CLI
+        run: |
+          az bicep install || true
+          az bicep version || true
+
+      - name: Build Bicep templates
+        shell: bash
+        run: |
+          set -euo pipefail
+          errors=0
+
+          mapfile -t bicepFiles < <(find labs/iac -type f -name '*.bicep' 2>/dev/null || true)
+
+          if [ "${#bicepFiles[@]}" -eq 0 ]; then
+            echo "No Bicep files found — skipping Bicep validation."
+            exit 0
+          fi
+
+          echo "Validating ${#bicepFiles[@]} Bicep templates..."
+
+          for f in "${bicepFiles[@]}"; do
+            echo "::group::$f"
+            if ! az bicep build --file "$f" --stdout > /dev/null; then
+              echo "::error file=$f::Bicep build failed"
+              errors=$((errors+1))
+            else
+              echo "Bicep build OK"
+            fi
+            echo "::endgroup::"
+          done
+
+          if [ "$errors" -gt 0 ]; then
+            echo "::error::$errors Bicep templates failed to build"
+            exit 1
+          fi

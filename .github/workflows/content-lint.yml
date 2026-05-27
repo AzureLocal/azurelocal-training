@@ -1,0 +1,70 @@
+name: Content Lint
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'docs/**'
+      - 'mkdocs.yml'
+      - 'repo-management/**.md'
+
+jobs:
+  markdownlint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install markdownlint-cli
+        run: npm install -g markdownlint-cli@0.41.0
+
+      - name: Run markdownlint
+        run: |
+          markdownlint \
+            --disable MD013 MD033 MD041 \
+            'docs/**/*.md' 'repo-management/**/*.md' \
+            || true
+
+  link-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Restore lychee cache
+        uses: actions/cache@v4
+        with:
+          path: .lycheecache
+          key: cache-lychee-${{ github.sha }}
+          restore-keys: cache-lychee-
+
+      - name: Run lychee link checker
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: |
+            --cache
+            --max-cache-age 7d
+            --no-progress
+            --accept 200,204,206,403,429,999
+            'docs/**/*.md'
+            'repo-management/**/*.md'
+          fail: false
+
+  mkdocs-strict-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install MkDocs Material
+        run: pip install mkdocs-material
+
+      - name: mkdocs build --strict
+        run: mkdocs build --strict

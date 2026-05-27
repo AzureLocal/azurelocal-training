@@ -1,7 +1,7 @@
 site_name: Azure Local Training
 site_description: Training materials and guides for Azure Local
 site_author: Azure Local Cloud
-site_url: https://azurelocal.github.io/azurelocal-training/
+site_url: https://training.azurelocal.cloud/
 repo_url: https://github.com/AzureLocal/azurelocal-training
 repo_name: AzureLocal/azurelocal-training
 

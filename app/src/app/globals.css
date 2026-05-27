@@ -1,0 +1,24 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  background: #fff;
+  color: #111;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.5;
+}
+
+a {
+  color: #0078d4;
+}
+
+code {
+  background: #f3f3f3;
+  padding: 0.1em 0.35em;
+  border-radius: 3px;
+  font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', monospace;
+}

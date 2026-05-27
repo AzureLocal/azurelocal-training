@@ -36,6 +36,34 @@ theme:
 
 nav:
   - Home: index.md
+  - Foundations:
+    - 00 — Introduction to Azure Local: 00-introduction/index.md
+    - 01 — Planning & Sizing: 01-planning-sizing/index.md
+    - 02 — Deployment: 02-deployment/index.md
+    - 03 — Management: 03-management/index.md
+    - 04 — Azure Arc Deep Dive: 04-azure-arc/index.md
+  - Infrastructure:
+    - 05 — Compute (Hyper-V + Clustering + Arc VMs): 05-compute/index.md
+    - 06 — Storage: 06-storage/index.md
+    - 07 — Core Networking: 07-core-networking/index.md
+    - 08 — Software Defined Networking: 08-software-defined-networking/index.md
+  - Operations:
+    - 09 — Security & Compliance: 09-security-compliance/index.md
+    - 10 — Observability & Monitoring: 10-observability-monitoring/index.md
+    - 11 — Troubleshooting: 11-troubleshooting/index.md
+    - 12 — BCDR (Business Continuity & DR): 12-bcdr/index.md
+    - 13 — Day-2 Operations & Lifecycle: 13-day-2-operations/index.md
+  - Workloads:
+    - 14 — AKS on Azure Local: 14-aks/index.md
+    - 15 — Azure Virtual Desktop: 15-avd/index.md
+    - 16 — IoT Operations: 16-iot-operations/index.md
+    - 17 — Azure AI Foundry Local: 17-ai-foundry-local/index.md
+  - Adoption:
+    - 18 — Migration: 18-migration/index.md
+    - 19 — SCVMM (Optional): 19-scvmm/index.md
+  - Labs:
+    - Lab Environment Setup: labs/index.md
+  - Presentations: presentations/index.md
 
 markdown_extensions:
   - admonition

@@ -52,5 +52,4 @@ IaC: Bicep + PowerShell in [`labs/iac/08-post-deployment-configurations/`](https
 
 - [azurelocal.cloud — Phase 06: Post-Deployment Cluster Configuration](https://azurelocal.cloud/docs/next/implementation/04-cluster-deployment/phase-06-post-deployment/)
 - [azurelocal.cloud — Implementation Guide overview](https://azurelocal.cloud/docs/next/implementation/)
-- ADR: [0007 — Post-Deployment Configurations as its own module](https://github.com/AzureLocal/azurelocal-training/blob/main/repo-management/adr/0007-post-deployment-configurations-module.md)
 - Slides: `slides/08-post-deployment-configurations/` (planned)

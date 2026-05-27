@@ -40,7 +40,7 @@ This is a **workshop-first** curriculum. Most modules include hands-on labs, IaC
 
 ## Curriculum — 21 Modules
 
-The curriculum is organized into 21 modules across five learning tracks: **Foundations**, **Deployment**, **Operations**, **Workloads**, and **Adoption**. Foundations come first — learn what Azure Local is and the technology underneath, then deploy, then operate, then workloads. See [ADR-0005](https://github.com/AzureLocal/azurelocal-training/blob/main/repo-management/adr/0005-curriculum-21-module-framework.md) for the rationale.
+The curriculum is organized into 21 modules across five learning tracks: **Foundations**, **Deployment**, **Operations**, **Workloads**, and **Adoption**. Foundations come first — learn what Azure Local is and the technology underneath, then deploy, then operate, then workloads.
 
 ### Foundations — what Azure Local is and the technology underneath
 
@@ -94,7 +94,7 @@ The curriculum is organized into 21 modules across five learning tracks: **Found
 
 ## Delivery Programs
 
-Delivery programs are curated subsets of the 21 modules for specific audiences and time windows. Programs are defined in the [strategic plan](https://github.com/AzureLocal/azurelocal-training/blob/main/repo-management/training-platform-plan.md) and will be published here as they're finalized.
+Delivery programs are curated subsets of the 21 modules for specific audiences and time windows. Program agendas will be published here as they're finalized.
 
 The three delivery formats are:
 
@@ -128,4 +128,4 @@ This training curriculum is an open-source project. Contributions are welcome �
 
 - [Azure Local documentation](https://learn.microsoft.com/azure-local/)
 - [Azure Arc documentation](https://learn.microsoft.com/azure/azure-arc/)
-- [Training platform plan (strategic)](https://github.com/AzureLocal/azurelocal-training/blob/main/repo-management/training-platform-plan.md)
+- [Azure Local Implementation Guide (azurelocal.cloud)](https://azurelocal.cloud/docs/next/implementation/)

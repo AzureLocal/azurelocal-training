@@ -3,7 +3,7 @@
 **Level:** L300 | **Duration:** 3 hours | **Prerequisites:** Module 14 | **Hands-on:** Lab
 
 !!! note "Module Status"
-    Framework module — **content scope under research.** See [research/iot-operations.md](https://github.com/AzureLocal/azurelocal-training/blob/main/repo-management/research/iot-operations.md).
+    Framework module — content scope under research.
 
 ## Learning Objectives (tentative)
 
@@ -28,10 +28,9 @@
 
 **Lab:** Deploy Azure IoT Operations on the cluster's AKS Arc instance. Configure an MQTT data flow. Simulate device data. Verify ingestion at the Azure side.
 
-IaC: Bicep templates in `labs/iac/16-iot-operations/` (planned).
+IaC: Bicep templates in `labs/iac/17-iot-operations/` (planned).
 
 ## Related Resources
 
 - [Azure IoT Operations](https://learn.microsoft.com/azure/iot-operations/)
-- Research notes: [research/iot-operations.md](https://github.com/AzureLocal/azurelocal-training/blob/main/repo-management/research/iot-operations.md)
-- Slides: `slides/16-iot-operations/` (planned)
+- Slides: `slides/17-iot-operations/` (planned)

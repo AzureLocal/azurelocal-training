@@ -3,7 +3,7 @@
 **Level:** L300 | **Duration:** 3 hours | **Prerequisites:** Module 14 | **Hands-on:** Lab
 
 !!! note "Module Status"
-    Framework module — **content scope under research.** See [research/ai-foundry-local.md](https://github.com/AzureLocal/azurelocal-training/blob/main/repo-management/research/ai-foundry-local.md).
+    Framework module — content scope under research.
 
 ## Learning Objectives (tentative)
 
@@ -28,10 +28,9 @@
 
 **Lab:** Deploy Foundry Local on AKS Arc. Deploy a Phi-3 (or equivalent) small model. Call inference endpoint from a test app. Validate no data egress.
 
-IaC: Bicep templates in `labs/iac/17-ai-foundry-local/` (planned).
+IaC: Bicep templates in `labs/iac/18-ai-foundry-local/` (planned).
 
 ## Related Resources
 
 - [Azure AI Foundry Local](https://learn.microsoft.com/azure/ai-foundry/foundry-local/)
-- Research notes: [research/ai-foundry-local.md](https://github.com/AzureLocal/azurelocal-training/blob/main/repo-management/research/ai-foundry-local.md)
-- Slides: `slides/17-ai-foundry-local/` (planned)
+- Slides: `slides/18-ai-foundry-local/` (planned)

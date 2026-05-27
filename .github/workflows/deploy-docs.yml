@@ -9,14 +9,12 @@ on:
       - 'CNAME'
   workflow_dispatch:
 
+# Reusable workflow needs pages:write + id-token:write for actions/deploy-pages@v4.
+# Caller must grant these explicitly — they are NOT part of the default token scope.
 permissions:
   contents: read
   pages: write
   id-token: write
-
-concurrency:
-  group: pages-${{ github.ref }}
-  cancel-in-progress: false
 
 jobs:
   docs:

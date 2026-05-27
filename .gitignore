@@ -18,3 +18,7 @@ Thumbs.db
 # Logs
 logs/
 *.log
+
+# Claude Code — machine-local overrides and session logs (never commit)
+.claude/settings.local.json
+.claude/logs/

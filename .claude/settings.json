@@ -2,9 +2,56 @@
   "env": {
     "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
   },
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          { "type": "command", "command": "pwsh -NonInteractive -File E:/git/azurelocal/azurelocal-training/.claude/hooks/load-memory.ps1" }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          { "type": "command", "command": "pwsh -NonInteractive -File E:/git/azurelocal/azurelocal-training/.claude/hooks/block-secrets.ps1" },
+          { "type": "command", "command": "pwsh -NonInteractive -File E:/git/azurelocal/azurelocal-training/.claude/hooks/validate-path.ps1" }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          { "type": "command", "command": "pwsh -NonInteractive -File E:/git/azurelocal/azurelocal-training/.claude/hooks/block-destructive.ps1" }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          { "type": "command", "command": "pwsh -NonInteractive -File E:/git/azurelocal/azurelocal-training/.claude/hooks/log-tokens.ps1" },
+          { "type": "command", "command": "pwsh -NonInteractive -File E:/git/azurelocal/azurelocal-training/.claude/hooks/format-on-write.ps1" }
+        ]
+      },
+      {
+        "matcher": "Agent",
+        "hooks": [
+          { "type": "command", "command": "pwsh -NonInteractive -File E:/git/azurelocal/azurelocal-training/.claude/hooks/log-operate.ps1" }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          { "type": "command", "command": "pwsh -NonInteractive -File E:/git/azurelocal/azurelocal-training/.claude/hooks/summarize-session.ps1" }
+        ]
+      }
+    ]
+  },
   "permissions": {
     "allow": [
       "Bash(git add:*)",
+      "Bash(git commit -m ':*)",
       "Bash(git commit:*)",
       "Bash(git push:*)",
       "Bash(git status:*)",
@@ -15,14 +62,21 @@
       "Bash(gh run:*)",
       "Bash(gh api:*)",
       "Bash(gh workflow:*)",
+      "Bash(gh release:*)",
+      "Bash(pwsh -NoProfile -Command ':*)",
+      "Bash(pwsh -NoProfile -File ':*)",
+      "Bash(pwsh -NonInteractive -Command ':*)",
+      "Bash(pwsh -NonInteractive -File ':*)",
+      "Bash(mkdocs serve:*)",
+      "Bash(mkdocs build:*)",
+      "Bash(pip install:*)",
+      "Read(//e/git/azurelocal/azurelocal-training/**)",
       "WebSearch",
       "WebFetch(domain:github.com)",
       "WebFetch(domain:raw.githubusercontent.com)",
       "WebFetch(domain:learn.microsoft.com)",
-      "WebFetch(domain:dev.azure.com)",
-      "Bash(mkdocs:*)",
-      "Bash(pip:*)",
-      "Bash(python:*)"
+      "WebFetch(domain:squidfunk.github.io)",
+      "WebFetch(domain:dev.azure.com)"
     ]
   }
 }

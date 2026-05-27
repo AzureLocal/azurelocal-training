@@ -1,1 +1,18 @@
+# All files — repo owner required on every PR
 * @kristopherjturner
+
+# Lab content — domain review required
+docs/labs/**           @kristopherjturner
+docs/*/lab-*.md        @kristopherjturner
+
+# IaC templates — infrastructure review required
+labs/iac/**            @kristopherjturner
+
+# AI tutor application — app review required
+app/**                 @kristopherjturner
+
+# Platform/CI configuration — tightly guarded
+.github/**             @kristopherjturner
+.claude/**             @kristopherjturner
+mkdocs.yml             @kristopherjturner
+.gitattributes         @kristopherjturner

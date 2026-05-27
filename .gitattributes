@@ -1,0 +1,21 @@
+# Normalize line endings
+* text=auto
+
+# Git LFS — binary assets
+*.pptx filter=lfs diff=lfs merge=lfs -text
+*.pptm filter=lfs diff=lfs merge=lfs -text
+*.potx filter=lfs diff=lfs merge=lfs -text
+*.ppt  filter=lfs diff=lfs merge=lfs -text
+*.mp4  filter=lfs diff=lfs merge=lfs -text
+*.mov  filter=lfs diff=lfs merge=lfs -text
+*.avi  filter=lfs diff=lfs merge=lfs -text
+*.pdf  filter=lfs diff=lfs merge=lfs -text
+
+# Images — LFS for large assets, not inline icons
+*.png  filter=lfs diff=lfs merge=lfs -text
+*.jpg  filter=lfs diff=lfs merge=lfs -text
+*.jpeg filter=lfs diff=lfs merge=lfs -text
+*.gif  filter=lfs diff=lfs merge=lfs -text
+
+# SVG stays in regular Git (small, text-based, diffs cleanly)
+*.svg  text eol=lf

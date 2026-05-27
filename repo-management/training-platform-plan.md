@@ -211,7 +211,7 @@ The agreed module framework. 20 modules organized as a learning path (foundation
 **Notes:**
 - Module 01 (Arc Deep Dive) — Arc fabric, Resource Bridge, agents, under-the-hood. Sits in Foundations because Arc is the substrate Azure Local is built on.
 - Module 07 (Deployment) — covers architectural choices (S2D vs SAN vs hybrid; AD vs local identity; Portal vs ARM vs cloud-managed deployment), not just one path.
-- Module 08 (Post-Deployment Configurations) — NEW dedicated module for the operator's post-deploy work (storage paths, VM images, tenant logical networks, RBAC for VM management) per the [Microsoft Learn VM management workflow](https://learn.microsoft.com/azure/azure-local/manage/azure-arc-vm-management-overview). See [ADR-0007](adr/0007-post-deployment-configurations-module.md).
+- Module 08 (Post-Deployment Configurations) — NEW dedicated module mirroring [azurelocal.cloud Phase 06: Post-Deployment Cluster Configuration](https://azurelocal.cloud/docs/next/implementation/04-cluster-deployment/phase-06-post-deployment/) — SDN deploy, cluster quorum, security groups on nodes, SSH, storage configuration (S2D pool + CSV volumes + storage paths), image downloads, NSGs, logical network creation, verification. See [ADR-0007](adr/0007-post-deployment-configurations-module.md).
 - Module 13 (BCDR) — Azure Site Recovery, Azure Backup, DR planning/testing.
 - Module 14 (Day-2/Lifecycle) — Azure Update Manager, LCM, capacity expansion.
 - Module 10 (Security & Compliance) — Azure Policy, Defender for Cloud, plus all the security topics. Major expansion from legacy 2-hour treatment.

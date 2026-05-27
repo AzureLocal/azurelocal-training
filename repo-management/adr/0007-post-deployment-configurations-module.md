@@ -6,22 +6,21 @@
 
 ## Context
 
-The cluster-deployment workflow (Module 07) ends when:
-- Cluster validation passes
-- Arc Resource Bridge VM is created
-- Infrastructure logical network is auto-created
-- Cluster is registered to Arc
+The cluster-deployment workflow (Module 07) ends when cluster deployment completes via the chosen method (Portal / ARM Template, S2D / SAN, AD / Local identity). After that, there is a distinct set of operator tasks the cluster needs before any workload can be deployed. The canonical source of truth is the **azurelocal.cloud implementation guide, Phase 06: Post-Deployment Cluster Configuration**:
 
-After that, there is a distinct set of operator tasks the cluster needs before any workload (VM, AKS, AVD, IoT, AI Foundry) can be deployed. Per the [Microsoft Learn — Azure Local VM management workflow](https://learn.microsoft.com/azure/azure-local/manage/azure-arc-vm-management-overview), these tasks are:
+https://azurelocal.cloud/docs/next/implementation/04-cluster-deployment/phase-06-post-deployment/
 
-1. Assign built-in RBAC roles for Azure Local VM management
-2. Create **storage paths** for VM disks
-3. Create **VM images** (Azure Marketplace / Azure Storage account / local share)
-4. Create **logical networks** (tenant networks beyond the auto-created infra logical network)
-5. Create **VM network interfaces**
-6. Verify the **custom location** mapping the Arc Resource Bridge to the cluster
-7. Configure **Arc-managed SDN** if SDN is in use
-8. Validate everything is functional before workloads land
+Per that implementation runbook, the post-deployment tasks are:
+
+1. Task 01 — Deploy SDN (Network Controller, Software Load Balancer, RAS Gateway)
+2. Task 02 — Cluster Quorum Configuration (Cloud Witness / File Share Witness / Disk Witness)
+3. Task 03 — Security Groups Applied to Nodes (RBAC, administrative access control)
+4. Task 04 — SSH Connectivity to Nodes
+5. Task 05 — Storage Configuration (S2D pool review, CSV volume creation, storage path creation)
+6. Task 06 — Image Downloads (Marketplace and custom images staged to storage paths)
+7. Task 07 — Configure Network Security Groups
+8. Task 08 — Logical Network Creation (workload VLANs, IP pools, network properties)
+9. Task 09 — Post-Deployment Verification
 
 Initial draft of the curriculum had these collapsed inside Module 09 Management or Module 07 Deployment. Both fits were poor:
 
@@ -32,17 +31,19 @@ Initial draft of the curriculum had these collapsed inside Module 09 Management 
 
 Post-Deployment Configurations is **Module 08**, its own module under the Deployment track. It immediately follows Module 07 (Deployment) and precedes the Operations track.
 
-Scope:
-- Built-in RBAC role assignment for Azure Local VM management
-- Storage paths configuration
-- VM image creation and management (Marketplace / Storage account / local share)
-- Logical networks (tenant networks for Arc VMs and IP pool design)
-- VM network interfaces
-- Custom Location verification
-- Arc-managed SDN initial configuration (when used)
-- Final validation that the cluster is ready for workloads
+Scope mirrors the 9 tasks of implementation Phase 06:
 
-Scope is bounded by "things the operator does once, after deployment completes, before workloads land." Things that happen continuously (monitoring, updates, security drift remediation) belong in the Operations track.
+- Deploy SDN infrastructure (Network Controller, SLB, RAS Gateway)
+- Cluster quorum configuration
+- Security groups applied to nodes (RBAC)
+- SSH connectivity to nodes
+- Storage configuration (S2D pool review, CSV volumes, storage paths)
+- Image downloads (Marketplace + custom)
+- Network Security Groups
+- Logical network creation (workload VLANs, IP pools)
+- Post-deployment verification
+
+Scope is bounded by "things the operator does once, after deployment completes, before workloads land." Things that happen continuously (monitoring, updates, security drift remediation) map to the Operations track (Modules 09–14) and to the implementation guide's Phase 05: Operational Foundations.
 
 ## Consequences
 
@@ -68,4 +69,5 @@ Scope is bounded by "things the operator does once, after deployment completes, 
 
 - ADR-0005 — 21-module curriculum framework
 - ADR-0006 — Foundations first, then Deployment
-- [Microsoft Learn — Azure Local VM management workflow](https://learn.microsoft.com/azure/azure-local/manage/azure-arc-vm-management-overview)
+- [azurelocal.cloud — Phase 06: Post-Deployment Cluster Configuration](https://azurelocal.cloud/docs/next/implementation/04-cluster-deployment/phase-06-post-deployment/)
+- [azurelocal.cloud — Implementation Guide overview](https://azurelocal.cloud/docs/next/implementation/)

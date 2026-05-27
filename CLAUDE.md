@@ -13,8 +13,8 @@ Use the `training-content-author` agent and the `/new-lab`, `/new-workshop`, and
 ## ADO project details
 
 - **ADO org:** https://dev.azure.com/hybridcloudsolutions
-- **ADO project:** AzureLocal
-- **Area path:** AzureLocal\Training
+- **ADO project:** `Azure Local Training` (with spaces — verified via `az devops project list` 2026-05-27)
+- **Area path:** `\Azure Local Training\Area` (root area, no children yet)
 - **Work item format:** AB#<id> in commit messages
 
 ## Standards

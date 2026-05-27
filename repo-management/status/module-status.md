@@ -2,6 +2,8 @@
 
 Last updated: 2026-05-27
 
+**ADO Project:** `Azure Local Training` (org: hybridcloudsolutions). Work items tagged with `AB#<id>` in commit messages.
+
 ## Legend
 
 | Symbol | Meaning |

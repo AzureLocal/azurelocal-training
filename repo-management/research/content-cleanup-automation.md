@@ -1,47 +1,54 @@
 # Research: Content Cleanup Automation Pattern
 
-**Status:** Pending  
-**Assigned:** @kristopherjturner  
+**Status:** Complete
+**Assigned:** @kristopherjturner
 **Added:** 2026-05-27
+**Updated:** 2026-05-27
 
-## Objective
+---
 
-Locate the content-cleanup automation pattern that exists in the AzureLocal platform standards and determine how to apply it to `azurelocal-training`.
+## Finding
 
-The user noted this pattern was missed when implementing the platform standards for this repo. It likely lives somewhere in:
+**No canonical reusable "content cleanup" workflow exists in `azurelocal-platform`.** Platform CI only lints platform's own docs — it is not exposed as a reusable workflow for consumer repos like `azurelocal-training`.
 
-- `E:\git\platform\docs\` — platform documentation
-- `E:\git\azurelocal\azurelocal.github.io\standards\` — repo standards
-- A shared GitHub Actions reusable workflow in `AzureLocal/.github`
+## What exists
 
-## Scope Questions
+### Platform's own (non-reusable) CI
 
-1. What exactly does "content cleanup automation" cover? Candidates:
-   - Broken link scanning
-   - Orphaned image/asset detection
-   - Stale content flagging (pages not updated in N months)
-   - Markdown formatting normalization
-   - Front matter validation
-2. Is it implemented as a GitHub Actions workflow, a pre-commit hook, or a CLI script?
-3. Does it exist as a shared reusable workflow in `AzureLocal/.github`?
+- **Path:** `E:\git\azurelocal\azurelocal-platform\.github\workflows\platform-ci.yml`
+- **Type:** GitHub Actions workflow (not reusable — runs only on the platform repo)
+- **What it does:** Three jobs:
+  - `markdownlint` — DavidAnson/markdownlint-cli2-action@v17 against `.markdownlint.json`
+  - `link-check` — lycheeverse/lychee-action@v2 (non-blocking)
+  - yamllint and Pester
 
-## Search Leads
+The standards page (`docs/standards/contributing.md` line 106) explicitly says enforcement should be propagated through `.markdownlint.json` + `_common` template rather than via a shared workflow.
 
-```
-# Search platform docs
-grep -r "content-cleanup\|content cleanup\|cleanup automation" E:\git\platform\docs\
-grep -r "content-cleanup\|content cleanup" E:\git\azurelocal\azurelocal.github.io\
-```
+### The training repo already has a local equivalent
 
-## Findings
+- **Path:** `.github/workflows/content-lint.yml` (this repo)
+- **Type:** GitHub Actions workflow (local, not reusable)
+- **Jobs:**
+  - `markdownlint` (markdownlint-cli 0.41.0)
+  - `link-check` (lychee-action@v2 with 7d cache, non-failing)
+  - `mkdocs-strict-build` (`mkdocs build --strict`)
 
-_Not yet investigated._
+The local `content-lint.yml` mirrors what platform does for itself. **No further action needed** — the training repo already has the right pattern in place.
 
-## Actions
+## What is NOT covered (anywhere)
 
-_Pending findings. Once located, implement the pattern in this repo and add the workflow to automation.md._
+- Orphaned-page detection (pages in `docs/` not in `mkdocs.yml` nav)
+- Frontmatter validation
+- Stale-content pruning (pages not updated in N months)
+
+`mkdocs build --strict` is the closest proxy — it catches broken intra-site refs and missing nav entries.
+
+## Action
+
+**Use the existing `content-lint.yml` workflow.** It is the canonical pattern. If a reusable cross-repo version is wanted in the future, author it in `azurelocal-platform/.github/workflows/reusable-content-lint.yml` — but that does not exist today and is not needed for the training repo.
 
 ## Related
 
-- [automation.md](../automation.md) — where the workflow will be documented once found
-- [training-platform-plan.md](../training-platform-plan.md) — Section 7 (Content Automation)
+- `.github/workflows/content-lint.yml` (this repo)
+- `azurelocal-platform/.github/workflows/platform-ci.yml`
+- `azurelocal-platform/docs/standards/contributing.md`

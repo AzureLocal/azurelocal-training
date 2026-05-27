@@ -1,0 +1,71 @@
+name: IaC Lab Cleanup
+
+# Manually triggered: destroys Azure resources for a given lab tag/RG after a workshop ends.
+# Scheduled: nightly safety net to clean up resources older than TTL.
+
+on:
+  workflow_dispatch:
+    inputs:
+      resource_group:
+        description: Resource group to delete (must start with 'rg-azltrn-lab-')
+        type: string
+        required: true
+      dry_run:
+        description: Dry-run only (no deletion)
+        type: boolean
+        default: true
+  schedule:
+    - cron: '0 6 * * *'   # 06:00 UTC daily — safety net
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate RG name prefix
+        if: ${{ github.event_name == 'workflow_dispatch' }}
+        shell: bash
+        run: |
+          rg="${{ github.event.inputs.resource_group }}"
+          if [[ ! "$rg" =~ ^rg-azltrn-lab- ]]; then
+            echo "::error::Resource group name must start with 'rg-azltrn-lab-' (safety guard)"
+            exit 1
+          fi
+          echo "Validated RG name: $rg"
+
+      - name: Azure login (federated)
+        if: ${{ secrets.AZURE_CLIENT_ID != '' }}
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+      - name: Manual cleanup (workflow_dispatch)
+        if: ${{ github.event_name == 'workflow_dispatch' }}
+        shell: bash
+        run: |
+          rg="${{ github.event.inputs.resource_group }}"
+          dry="${{ github.event.inputs.dry_run }}"
+          if [ "$dry" = "true" ]; then
+            echo "DRY-RUN: would delete RG '$rg'. No resources will be removed."
+            az group show --name "$rg" --query "{name:name, location:location, tags:tags}" -o table || true
+            exit 0
+          fi
+          echo "Deleting RG '$rg' (no-wait)..."
+          az group delete --name "$rg" --yes --no-wait
+
+      - name: Scheduled safety-net (nightly)
+        if: ${{ github.event_name == 'schedule' }}
+        shell: bash
+        run: |
+          echo "Nightly safety-net — scans for stale lab RGs."
+          # Find RGs with name prefix and tag azltrn-lab=true that are older than the TTL hours stamped in tag.
+          # Default conservative: only delete if 'azltrn-cleanup=ok' tag is present AND createdAt < now - 24h.
+          # Until subscription/credentials are wired, this is a no-op stub.
+          echo "Configure AZURE_CLIENT_ID / AZURE_TENANT_ID / AZURE_SUBSCRIPTION_ID secrets to enable."

@@ -160,36 +160,63 @@ The agreed module framework. 20 modules organized as a learning path (foundation
 
 **Workshop-first principle:** This is a workshop, not a speaking session. Every module declares its hands-on content (lab, demo, presentation-only). Most modules require labs.
 
+21-module curriculum, five learning tracks, Foundations first. See [ADR-0005](adr/0005-curriculum-21-module-framework.md), [ADR-0006](adr/0006-track-ordering-foundations-first.md), [ADR-0007](adr/0007-post-deployment-configurations-module.md).
+
+**Foundations** — what Azure Local is + the underlying tech
+
 | # | Module | Hands-on | IaC | Slides | Video | AI tutor |
 |---|--------|----------|-----|--------|-------|----------|
 | **00** | Introduction to Azure Local | Pres + optional demo | — | ✓ | ✓ | ✓ |
-| **01** | Planning & Sizing | Pres + design exercise | — | ✓ | ✓ | ✓ |
-| **02** | Deployment | **Lab** (deploy cluster via Portal) | Bicep | ✓ | ✓ | ✓ |
-| **03** | Management | **Lab** (Portal/CLI/WAC + Dell OMSWAC) | — | ✓ | ✓ | ✓ |
-| **04** | Azure Arc — Infrastructure Deep Dive | **Demo** (Resource Bridge, agents) | — | ✓ | ✓ | ✓ |
-| **05** | Compute (Hyper-V + Failover Clustering + Arc VMs) | **Lab** (Arc VM Portal+Bicep, live mig, CAU, Cloud Witness) | Bicep | ✓ | ✓ | ✓ |
-| **06** | Storage | **Lab** (S2D volumes, ReFS, ReSync, monitoring) | Bicep | ✓ | ✓ | ✓ |
-| **07** | Core Networking | **Lab** (Network ATC intents, RDMA validation) | Bicep | ✓ | ✓ | ✓ |
-| **08** | Software Defined Networking (Arc-managed) | **Lab** (SDN deploy, controller, SLB) | Bicep | ✓ | ✓ | ✓ |
-| **09** | Security & Compliance | **Lab** (BitLocker, Azure Policy, Defender, SMI/drift) | Bicep + Policy | ✓ | ✓ | ✓ |
-| **10** | Observability & Monitoring | **Lab** (Monitor Insights, alerts, dashboards) | Bicep | ✓ | ✓ | ✓ |
-| **11** | Troubleshooting | **Lab/Demo** (guided break-fix scenarios) | — | ✓ | ✓ | ✓ |
-| **12** | Business Continuity & DR (BCDR) | **Lab** (ASR config, Backup, DR test) | Bicep | ✓ | ✓ | ✓ |
-| **13** | Day-2 Operations & Lifecycle | **Lab** (Update Manager, LCM, capacity expansion) | — | ✓ | ✓ | ✓ |
-| **14** | AKS on Azure Local | **Lab** (deploy cluster, workload) | Bicep + Terraform | ✓ | ✓ | ✓ |
-| **15** | Azure Virtual Desktop on Azure Local | **Lab** (host pool, session host, FSLogix) | Bicep | ✓ | ✓ | ✓ |
-| **16** | IoT Operations on Azure Local *(NEW)* | **Lab** (Arc-enabled IoT Operations, edge workload) | Bicep | ✓ | ✓ | ✓ |
-| **17** | Azure AI Foundry Local *(NEW)* | **Lab** (Foundry Local deploy, AI workload on Azure Local) | Bicep | ✓ | ✓ | ✓ |
-| **18** | Migration | **Lab/Demo** (VMware → Azure Local walk-through) | — | ✓ | ✓ | ✓ |
-| **19** | SCVMM (Optional / Placeholder) | Pres only (placeholder) | — | — | — | ✓ |
+| **01** | Azure Arc — Infrastructure Deep Dive | **Demo** (Resource Bridge, agents) | — | ✓ | ✓ | ✓ |
+| **02** | Compute (Hyper-V + Failover Clustering + Arc VMs) | **Lab** | Bicep | ✓ | ✓ | ✓ |
+| **03** | Storage | **Lab** (S2D, ReFS, ReSync) | Bicep | ✓ | ✓ | ✓ |
+| **04** | Core Networking | **Lab** (Network ATC, RDMA) | Bicep | ✓ | ✓ | ✓ |
+| **05** | Software Defined Networking (Arc-managed) | **Lab** (Arc-managed SDN, controller, SLB) | Bicep | ✓ | ✓ | ✓ |
+
+**Deployment** — plan, deploy, configure for workload use
+
+| # | Module | Hands-on | IaC | Slides | Video | AI tutor |
+|---|--------|----------|-----|--------|-------|----------|
+| **06** | Planning & Sizing | Pres + design exercise | — | ✓ | ✓ | ✓ |
+| **07** | Deployment (S2D / SAN / hybrid · AD / local identity · Portal / ARM / cloud-managed) | **Lab** (deploy cluster) | Bicep | ✓ | ✓ | ✓ |
+| **08** | Post-Deployment Configurations (RBAC, storage paths, VM images, logical networks) | **Lab** | Bicep | ✓ | ✓ | ✓ |
+
+**Operations** — run it
+
+| # | Module | Hands-on | IaC | Slides | Video | AI tutor |
+|---|--------|----------|-----|--------|-------|----------|
+| **09** | Management | **Lab** (Portal/CLI/WAC + Dell OMSWAC) | — | ✓ | ✓ | ✓ |
+| **10** | Security & Compliance | **Lab** (BitLocker, Policy, Defender, SMI/drift) | Bicep + Policy | ✓ | ✓ | ✓ |
+| **11** | Observability & Monitoring | **Lab** (Monitor, Insights, dashboards) | Bicep | ✓ | ✓ | ✓ |
+| **12** | Troubleshooting | **Lab/Demo** (guided break-fix) | — | ✓ | ✓ | ✓ |
+| **13** | Business Continuity & DR (BCDR) | **Lab** (ASR, Backup, DR test) | Bicep | ✓ | ✓ | ✓ |
+| **14** | Day-2 Operations & Lifecycle | **Lab** (Update Manager, LCM, capacity) | — | ✓ | ✓ | ✓ |
+
+**Workloads**
+
+| # | Module | Hands-on | IaC | Slides | Video | AI tutor |
+|---|--------|----------|-----|--------|-------|----------|
+| **15** | AKS on Azure Local | **Lab** (deploy cluster, workload) | Bicep + Terraform | ✓ | ✓ | ✓ |
+| **16** | Azure Virtual Desktop on Azure Local | **Lab** (host pool, session host, FSLogix) | Bicep | ✓ | ✓ | ✓ |
+| **17** | IoT Operations on Azure Local | **Lab** (Arc-enabled IoT Operations, OPC UA → MQTT → Event Hubs) | Bicep | ✓ | ✓ | ✓ |
+| **18** | Azure AI Foundry Local | **Lab** (Phi-4-mini sovereign chat on AKS Arc) | Bicep | ✓ | ✓ | ✓ |
+
+**Adoption**
+
+| # | Module | Hands-on | IaC | Slides | Video | AI tutor |
+|---|--------|----------|-----|--------|-------|----------|
+| **19** | Migration (VMware / Hyper-V → Azure Local) | **Lab/Demo** | — | ✓ | ✓ | ✓ |
+| **20** | SCVMM (Optional / Placeholder) | Pres only | — | — | — | ✓ |
 
 **Notes:**
-- Module 04 (Arc Deep Dive) — new vs prior plans; the original "Hybrid Services" bucket was broken apart with Arc itself getting its own deep dive (Arc fabric, Resource Bridge, agents, under-the-hood).
-- Module 12 (BCDR) — Azure Site Recovery, Azure Backup, DR planning/testing moved here from Hybrid Services.
-- Module 13 (Day-2/Lifecycle) — Azure Update Manager, LCM, capacity expansion moved here.
-- Module 09 (Security & Compliance) — Azure Policy, Defender for Cloud absorbed from Hybrid Services. Massive expansion from the legacy 2-hour Level 200 treatment.
-- Module 16 (IoT Operations) and Module 17 (Azure AI Foundry Local) require research before content work — see `repo-management/research/`.
-- Module 19 (SCVMM) — placeholder for enterprise customers still using SCVMM. Not built out until customer demand confirmed.
+- Module 01 (Arc Deep Dive) — Arc fabric, Resource Bridge, agents, under-the-hood. Sits in Foundations because Arc is the substrate Azure Local is built on.
+- Module 07 (Deployment) — covers architectural choices (S2D vs SAN vs hybrid; AD vs local identity; Portal vs ARM vs cloud-managed deployment), not just one path.
+- Module 08 (Post-Deployment Configurations) — NEW dedicated module for the operator's post-deploy work (storage paths, VM images, tenant logical networks, RBAC for VM management) per the [Microsoft Learn VM management workflow](https://learn.microsoft.com/azure/azure-local/manage/azure-arc-vm-management-overview). See [ADR-0007](adr/0007-post-deployment-configurations-module.md).
+- Module 13 (BCDR) — Azure Site Recovery, Azure Backup, DR planning/testing.
+- Module 14 (Day-2/Lifecycle) — Azure Update Manager, LCM, capacity expansion.
+- Module 10 (Security & Compliance) — Azure Policy, Defender for Cloud, plus all the security topics. Major expansion from legacy 2-hour treatment.
+- Modules 17 (IoT Operations) and 18 (AI Foundry Local) — research findings in `repo-management/research/`.
+- Module 20 (SCVMM) — placeholder; not built out until customer demand confirmed.
 
 **What was dropped from the legacy:**
 - Azure File Sync (not core to Azure Local operations)

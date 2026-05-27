@@ -17,10 +17,10 @@ A nested-virtualization Azure Local lab built inside an Azure VM. No on-premises
 
 ### B. Physical Hyper-V server (nested environment)
 
-A student's or customer's existing physical Hyper-V server runs the lab as nested VMs. The lab solution is shipped as PowerShell + DSC + Bicep-equivalent ARM templates that target the local host instead of Azure.
+A student's or customer's existing physical Hyper-V server runs the lab as nested VMs.
 
 - **Use for:** students with hardware already on a Hyper-V host, customers who want labs on-prem without cloud cost, instructor-provided physical lab kit at an in-person workshop
-- **Built by:** PowerShell scripts in [`labs/iac/onprem/`](https://github.com/AzureLocal/azurelocal-training/tree/main/labs/iac) (planned)
+- **Built by:** PowerShell + DSC scripts in [`labs/iac/onprem/`](https://github.com/AzureLocal/azurelocal-training/tree/main/labs/iac) (planned)
 - **Cost:** none beyond the existing hardware
 - **Prerequisites:** physical Hyper-V host with nested virtualization enabled, sufficient RAM/CPU/storage for the lab's VMs
 
@@ -41,7 +41,7 @@ Whichever environment is chosen, the lab is provisioned in one of two patterns:
 
 ### Student-deployed (self-guided / on-demand)
 
-The student runs the provided template against their own subscription or hardware. Used for on-demand and AI-led classes and self-paced video curriculum.
+The student runs the provided template against their own subscription or hardware. Used for on-demand self-paced classes.
 
 - Templates live under [`labs/iac/`](https://github.com/AzureLocal/azurelocal-training/tree/main/labs/iac)
 - A shared base at [`labs/iac/shared/`](https://github.com/AzureLocal/azurelocal-training/tree/main/labs/iac/shared) provisions the common substrate; per-module templates layer on top
@@ -58,26 +58,27 @@ For in-person workshops, the lab moderator deploys one shared environment or a p
 
 ## Lab index
 
-Lab guides are mapped 1:1 to modules where applicable. See the individual module pages for the lab content.
+Lab guides are mapped to modules where applicable. See the individual module pages for the lab content.
 
 | Module | Hands-on Type |
 |--------|---------------|
-| 02 — Deployment | **Lab** — deploy cluster |
-| 03 — Management | **Lab** — Portal/CLI/WAC tour |
-| 04 — Azure Arc Deep Dive | Demo |
-| 05 — Compute | **Lab** — Arc VM + Bicep |
-| 06 — Storage | **Lab** — S2D volumes, ReSync |
-| 07 — Core Networking | **Lab** — Network ATC, RDMA |
-| 08 — SDN | **Lab** — SDN deploy, SLB |
-| 09 — Security & Compliance | **Lab** — BitLocker, Policy, Defender |
-| 10 — Observability & Monitoring | **Lab** — Monitor, dashboards |
-| 11 — Troubleshooting | **Lab/Demo** — break-fix |
-| 12 — BCDR | **Lab** — ASR, Backup, DR test |
-| 13 — Day-2 Operations | **Lab** — Update Manager, LCM |
-| 14 — AKS | **Lab** — deploy AKS cluster |
-| 15 — AVD | **Lab** — host pool, FSLogix |
-| 16 — IoT Operations | **Lab** — IoT Operations deploy |
-| 17 — AI Foundry Local | **Lab** — Foundry Local deploy |
-| 18 — Migration | **Lab/Demo** — VMware migration |
+| 01 — Azure Arc Deep Dive | Demo |
+| 02 — Compute | **Lab** — Arc VM + Bicep |
+| 03 — Storage | **Lab** — S2D volumes, ReSync |
+| 04 — Core Networking | **Lab** — Network ATC, RDMA |
+| 05 — SDN | **Lab** — Arc-managed SDN deploy, SLB |
+| 07 — Deployment | **Lab** — deploy cluster (S2D, AD, Portal path) |
+| 08 — Post-Deployment Configurations | **Lab** — RBAC, storage paths, VM images, logical networks |
+| 09 — Management | **Lab** — Portal/CLI/WAC/OMSWAC tour |
+| 10 — Security & Compliance | **Lab** — BitLocker, Policy, Defender |
+| 11 — Observability & Monitoring | **Lab** — Monitor, Insights, dashboards |
+| 12 — Troubleshooting | **Lab/Demo** — break-fix |
+| 13 — BCDR | **Lab** — ASR, Backup, DR test |
+| 14 — Day-2 Operations | **Lab** — Update Manager, LCM |
+| 15 — AKS on Azure Local | **Lab** — deploy AKS cluster |
+| 16 — Azure Virtual Desktop | **Lab** — host pool, FSLogix |
+| 17 — IoT Operations | **Lab** — OPC UA → MQTT → Event Hubs |
+| 18 — Azure AI Foundry Local | **Lab** — Phi-4-mini sovereign chat |
+| 19 — Migration | **Lab/Demo** — VMware → Azure Local |
 
 IaC templates for each module live in [`labs/iac/<module>/`](https://github.com/AzureLocal/azurelocal-training/tree/main/labs/iac).

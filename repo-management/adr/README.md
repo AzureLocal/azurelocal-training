@@ -10,6 +10,11 @@ Lightweight records of significant technical and platform decisions. Each ADR ca
 | [0002](0002-subdomain-training.md) | Custom subdomain training.azurelocal.cloud | Accepted |
 | [0003](0003-ai-tutor-platform.md) | AI tutor platform — Next.js + Claude API | Accepted |
 | [0004](0004-git-lfs-binaries.md) | Git LFS for binary assets (.pptx, video) | Accepted |
+| [0005](0005-curriculum-21-module-framework.md) | 21-module curriculum framework with 5 tracks | Accepted |
+| [0006](0006-track-ordering-foundations-first.md) | Track ordering — Foundations before Deployment | Accepted |
+| [0007](0007-post-deployment-configurations-module.md) | Post-Deployment Configurations as its own module | Accepted |
+| [0008](0008-delivery-formats-three-modes.md) | Delivery formats — three modes | Accepted |
+| [0009](0009-lab-environments-three-targets.md) | Lab environments — three targets | Accepted |
 
 ## Format
 

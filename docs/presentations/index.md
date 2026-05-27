@@ -7,25 +7,26 @@ Slide decks for each training module. Source files (.pptx) are stored in `slides
 | # | Module | Status | Source |
 |---|--------|--------|--------|
 | 00 | Introduction to Azure Local | To Create | `slides/00-introduction/` |
-| 01 | Planning & Sizing | To Create | `slides/01-planning-sizing/` |
-| 02 | Deployment | To Create | `slides/02-deployment/` |
-| 03 | Management | To Create | `slides/03-management/` |
-| 04 | Azure Arc Deep Dive | To Create | `slides/04-azure-arc/` |
-| 05 | Compute | To Create | `slides/05-compute/` |
-| 06 | Storage | To Create | `slides/06-storage/` |
-| 07 | Core Networking | To Create | `slides/07-core-networking/` |
-| 08 | Software Defined Networking | To Create | `slides/08-software-defined-networking/` |
-| 09 | Security & Compliance | To Create | `slides/09-security-compliance/` |
-| 10 | Observability & Monitoring | To Create | `slides/10-observability-monitoring/` |
-| 11 | Troubleshooting | To Create | `slides/11-troubleshooting/` |
-| 12 | BCDR | To Create | `slides/12-bcdr/` |
-| 13 | Day-2 Operations & Lifecycle | To Create | `slides/13-day-2-operations/` |
-| 14 | AKS on Azure Local | To Create | `slides/14-aks/` |
-| 15 | Azure Virtual Desktop | To Create | `slides/15-avd/` |
-| 16 | IoT Operations | To Create | `slides/16-iot-operations/` |
-| 17 | Azure AI Foundry Local | To Create | `slides/17-ai-foundry-local/` |
-| 18 | Migration | To Create | `slides/18-migration/` |
-| 19 | SCVMM (Optional) | Placeholder | `slides/19-scvmm/` |
+| 01 | Azure Arc — Infrastructure Deep Dive | To Create | `slides/01-azure-arc/` |
+| 02 | Compute | To Create | `slides/02-compute/` |
+| 03 | Storage | To Create | `slides/03-storage/` |
+| 04 | Core Networking | To Create | `slides/04-core-networking/` |
+| 05 | Software Defined Networking (Arc-managed) | To Create | `slides/05-software-defined-networking/` |
+| 06 | Planning & Sizing | To Create | `slides/06-planning-sizing/` |
+| 07 | Deployment | To Create | `slides/07-deployment/` |
+| 08 | Post-Deployment Configurations | To Create | `slides/08-post-deployment-configurations/` |
+| 09 | Management | To Create | `slides/09-management/` |
+| 10 | Security & Compliance | To Create | `slides/10-security-compliance/` |
+| 11 | Observability & Monitoring | To Create | `slides/11-observability-monitoring/` |
+| 12 | Troubleshooting | To Create | `slides/12-troubleshooting/` |
+| 13 | BCDR | To Create | `slides/13-bcdr/` |
+| 14 | Day-2 Operations & Lifecycle | To Create | `slides/14-day-2-operations/` |
+| 15 | AKS on Azure Local | To Create | `slides/15-aks/` |
+| 16 | Azure Virtual Desktop | To Create | `slides/16-avd/` |
+| 17 | IoT Operations | To Create | `slides/17-iot-operations/` |
+| 18 | Azure AI Foundry Local | To Create | `slides/18-ai-foundry-local/` |
+| 19 | Migration | To Create | `slides/19-migration/` |
+| 20 | SCVMM (Optional) | Placeholder | `slides/20-scvmm/` |
 
 ## Legacy Slides
 

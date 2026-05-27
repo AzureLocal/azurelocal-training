@@ -38,62 +38,63 @@ This is a **workshop-first** curriculum. Most modules include hands-on labs, IaC
 
 ---
 
-## Curriculum — 20 Modules
+## Curriculum — 21 Modules
 
-The curriculum is organized into 20 modules across five learning tracks. Each module can be delivered independently or combined into a multi-day workshop. The day-by-day delivery schedule is built from these modules (see Delivery Programs).
+The curriculum is organized into 21 modules across five learning tracks: **Foundations**, **Deployment**, **Operations**, **Workloads**, and **Adoption**. Foundations come first — learn what Azure Local is and the technology underneath, then deploy, then operate, then workloads. See [ADR-0005](https://github.com/AzureLocal/azurelocal-training/blob/main/repo-management/adr/0005-curriculum-21-module-framework.md) for the rationale.
 
-### Foundations
+### Foundations — what Azure Local is and the technology underneath
 
 | # | Module | Level | Duration | Hands-on |
 |---|--------|-------|----------|----------|
 | [00](00-introduction/index.md) | Introduction to Azure Local | L100 | 2h | Pres + demo |
-| [01](01-planning-sizing/index.md) | Planning & Sizing | L200 | 2h | Design exercise |
-| [02](02-deployment/index.md) | Deployment | L200 | 4h | **Lab** |
-| [03](03-management/index.md) | Management | L200 | 3h | **Lab** |
-| [04](04-azure-arc/index.md) | Azure Arc — Infrastructure Deep Dive | L300 | 3h | Demo |
+| [01](01-azure-arc/index.md) | Azure Arc — Infrastructure Deep Dive | L300 | 3h | Demo |
+| [02](02-compute/index.md) | Compute (Hyper-V + Failover Clustering + Arc VMs) | L200-300 | 5h | **Lab** |
+| [03](03-storage/index.md) | Storage | L300 | 4h | **Lab** |
+| [04](04-core-networking/index.md) | Core Networking | L300 | 4h | **Lab** |
+| [05](05-software-defined-networking/index.md) | Software Defined Networking (Arc-managed) | L300 | 4h | **Lab** |
 
-### Infrastructure
-
-| # | Module | Level | Duration | Hands-on |
-|---|--------|-------|----------|----------|
-| [05](05-compute/index.md) | Compute (Hyper-V + Failover Clustering + Arc VMs) | L200-300 | 5h | **Lab** |
-| [06](06-storage/index.md) | Storage | L300 | 4h | **Lab** |
-| [07](07-core-networking/index.md) | Core Networking | L300 | 4h | **Lab** |
-| [08](08-software-defined-networking/index.md) | Software Defined Networking (Arc-managed) | L300 | 4h | **Lab** |
-
-### Operations
+### Deployment — plan, deploy, and configure for workload use
 
 | # | Module | Level | Duration | Hands-on |
 |---|--------|-------|----------|----------|
-| [09](09-security-compliance/index.md) | Security & Compliance | L300 | 5h | **Lab** |
-| [10](10-observability-monitoring/index.md) | Observability & Monitoring | L200-300 | 3h | **Lab** |
-| [11](11-troubleshooting/index.md) | Troubleshooting | L300 | 4h | **Lab/Demo** |
-| [12](12-bcdr/index.md) | Business Continuity & DR (BCDR) | L300 | 4h | **Lab** |
-| [13](13-day-2-operations/index.md) | Day-2 Operations & Lifecycle | L300 | 4h | **Lab** |
+| [06](06-planning-sizing/index.md) | Planning & Sizing | L200 | 2h | Design exercise |
+| [07](07-deployment/index.md) | Deployment (S2D / SAN / hybrid, AD / local identity, Portal / ARM / cloud-managed) | L200-300 | 5h | **Lab** |
+| [08](08-post-deployment-configurations/index.md) | Post-Deployment Configurations (RBAC, storage paths, VM images, logical networks) | L300 | 4h | **Lab** |
 
-### Workloads
+### Operations — run it
 
 | # | Module | Level | Duration | Hands-on |
 |---|--------|-------|----------|----------|
-| [14](14-aks/index.md) | AKS on Azure Local | L300 | 4h | **Lab** |
-| [15](15-avd/index.md) | Azure Virtual Desktop on Azure Local | L300 | 4h | **Lab** |
-| [16](16-iot-operations/index.md) | IoT Operations on Azure Local | L300 | 3h | **Lab** |
-| [17](17-ai-foundry-local/index.md) | Azure AI Foundry Local | L300 | 3h | **Lab** |
+| [09](09-management/index.md) | Management | L200 | 3h | **Lab** |
+| [10](10-security-compliance/index.md) | Security & Compliance | L300 | 5h | **Lab** |
+| [11](11-observability-monitoring/index.md) | Observability & Monitoring | L200-300 | 3h | **Lab** |
+| [12](12-troubleshooting/index.md) | Troubleshooting | L300 | 4h | **Lab/Demo** |
+| [13](13-bcdr/index.md) | Business Continuity & DR (BCDR) | L300 | 4h | **Lab** |
+| [14](14-day-2-operations/index.md) | Day-2 Operations & Lifecycle | L300 | 4h | **Lab** |
 
-### Adoption
+### Workloads — add workloads
 
 | # | Module | Level | Duration | Hands-on |
 |---|--------|-------|----------|----------|
-| [18](18-migration/index.md) | Migration (VMware / Hyper-V → Azure Local) | L300 | 3h | **Lab/Demo** |
-| [19](19-scvmm/index.md) | SCVMM on Azure Local (Optional / Placeholder) | L300 | 2h | Presentation |
+| [15](15-aks/index.md) | AKS on Azure Local | L300 | 4h | **Lab** |
+| [16](16-avd/index.md) | Azure Virtual Desktop on Azure Local | L300 | 4h | **Lab** |
+| [17](17-iot-operations/index.md) | IoT Operations on Azure Local | L300 | 3h | **Lab** |
+| [18](18-ai-foundry-local/index.md) | Azure AI Foundry Local | L300 | 3h | **Lab** |
 
-**Total curriculum content: ~70 hours** of presentation + lab time, delivered as multi-day workshops, online live sessions, or on-demand with the AI tutor.
+### Adoption — bring existing estates in
+
+| # | Module | Level | Duration | Hands-on |
+|---|--------|-------|----------|----------|
+| [19](19-migration/index.md) | Migration (VMware / Hyper-V → Azure Local) | L300 | 3h | **Lab/Demo** |
+| [20](20-scvmm/index.md) | SCVMM on Azure Local (Optional / Placeholder) | L300 | 2h | Presentation |
+
+**Total curriculum content: ~75 hours** of presentation + lab time, delivered as multi-day workshops, online live sessions, or on-demand with the AI tutor.
 
 ---
 
 ## Delivery Programs
 
-Delivery programs are curated subsets of the 20 modules for specific audiences and time windows. Programs are defined in the [strategic plan](https://github.com/AzureLocal/azurelocal-training/blob/main/repo-management/training-platform-plan.md) and will be published here as they're finalized.
+Delivery programs are curated subsets of the 21 modules for specific audiences and time windows. Programs are defined in the [strategic plan](https://github.com/AzureLocal/azurelocal-training/blob/main/repo-management/training-platform-plan.md) and will be published here as they're finalized.
 
 The three delivery formats are:
 

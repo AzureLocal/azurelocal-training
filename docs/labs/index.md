@@ -1,33 +1,12 @@
 # Lab Environment Setup
 
-All labs in this curriculum are designed for **two lab environment models**. Choose the one that matches your setup before starting any lab.
+Every lab in this curriculum supports **two environment models**. Pick the one that matches your situation before starting.
 
 ---
 
-## Option A: Azure Arc Jumpstart HCIBox (Recommended for Self-Paced)
+## Option A: Customer hardware (real Azure Local cluster)
 
-HCIBox is a pre-built nested-virtualization environment from the Azure Arc Jumpstart team. It provides a complete Azure Local cluster running inside Azure VMs — no physical hardware required.
-
-**Prerequisites:**
-
-- Azure subscription with contributor access
-- `az` CLI installed and authenticated
-- Quota for `Standard_E16s_v5` or similar in your target region
-
-**Deployment:**
-
-```bash
-# Full setup instructions at: https://azurearcjumpstart.com/azure_jumpstart_hcibox
-az deployment group create \
-  --resource-group rg-hcibox-lab \
-  --template-uri "https://raw.githubusercontent.com/microsoft/azure_arc/main/azure_jumpstart_hcibox/bicep/main.bicep"
-```
-
----
-
-## Option B: Customer / On-Premises Azure Local Cluster
-
-If you have access to a physical Azure Local cluster, labs can be performed directly in that environment.
+For students or teams with access to a physical Azure Local cluster.
 
 **Prerequisites:**
 
@@ -35,6 +14,42 @@ If you have access to a physical Azure Local cluster, labs can be performed dire
 - Azure subscription connected to the cluster
 - Contributor or higher access on the cluster resource group
 - Credentials for a cluster node (local admin or domain account)
+
+**Use this when:** the student is already an operator on a production or pilot cluster, or the training is delivered on-site at a customer location with their hardware.
+
+---
+
+## Option B: Provided lab building solutions
+
+When customer hardware isn't available, the workshop provides Bicep / Terraform templates that build a complete lab environment in Azure on demand. There are **two deployment patterns**:
+
+### B.1 — Student-deployed (self-guided / on-demand)
+
+The student deploys their own lab environment by running a provided Bicep template against their own Azure subscription. Used for the on-demand AI tutor classes and the self-paced video curriculum.
+
+- Templates live under [`labs/iac/`](https://github.com/AzureLocal/azurelocal-training/tree/main/labs/iac)
+- Each module has its own template variant where applicable
+- A shared base environment at [`labs/iac/shared/`](https://github.com/AzureLocal/azurelocal-training/tree/main/labs/iac/shared) provisions the common substrate; module-specific templates layer on top
+- Includes a `cleanup.ps1` per template so resources can be destroyed when the lab ends
+
+**Student prerequisites:**
+
+- Azure subscription (their own) with contributor access
+- `az` CLI installed and authenticated
+- Quota for the workshop's required VM SKUs (typically `Standard_E16s_v5` or similar)
+- `bicep` CLI available (`az bicep install`)
+
+### B.2 — Moderator-deployed (instructor-led, in-person)
+
+For in-person workshops, the lab moderator deploys one shared environment (or a per-participant batch) ahead of time. Students consume the environment without managing infrastructure.
+
+The same templates power this — the moderator runs them in batch with a participant-count parameter, distributes credentials, and runs cleanup at the end of the workshop.
+
+**Moderator prerequisites:**
+
+- A dedicated workshop Azure subscription with quota for `participantCount × VM SKU`
+- Service principal or managed identity with Contributor on the workshop RG
+- The shared base template (`labs/iac/shared/lab-environment.bicep`) plus the module-specific templates the workshop will cover
 
 ---
 

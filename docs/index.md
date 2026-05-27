@@ -110,8 +110,8 @@ The four delivery formats are:
 
 Every lab supports **two environment options**:
 
-- **Azure Arc Jumpstart HCIBox** — pre-built nested-virtualization environment in Azure
-- **Customer cluster** — labs run against a customer's own Azure Local cluster
+- **Customer hardware** — labs run against a customer's own Azure Local cluster
+- **Provided lab building solutions** — Bicep / Terraform templates we provide that build a lab environment in Azure on demand, deployed by the student (self-guided / on-demand classes) or by the lab moderator (in-person workshops)
 
 See [Lab Environment Setup](labs/index.md) for full lab list and setup instructions.
 

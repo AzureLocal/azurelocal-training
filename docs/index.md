@@ -95,14 +95,13 @@ The curriculum is organized into 20 modules across five learning tracks. Each mo
 
 Delivery programs are curated subsets of the 20 modules for specific audiences and time windows. Programs are defined in the [strategic plan](https://github.com/AzureLocal/azurelocal-training/blob/main/repo-management/training-platform-plan.md) and will be published here as they're finalized.
 
-The four delivery formats are:
+The three delivery formats are:
 
 | Format | Description |
 |--------|-------------|
 | **In-Person Workshop** | Multi-day on-site delivery with dedicated lab environment per participant |
 | **Online Live** | Scheduled virtual delivery via Teams/Zoom, same content, same labs |
-| **On-Demand Self-Paced** | Module library with AI-narrated video and hands-on labs |
-| **AI-Led On-Demand** | Interactive AI tutor (Claude-powered) that teaches modules and guides through labs |
+| **On-Demand Self-Paced** | Module library with AI-narrated video, hands-on labs, and the interactive AI tutor (Claude-powered) that teaches modules and guides through labs |
 
 ---
 

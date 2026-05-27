@@ -14,16 +14,15 @@ This is the living plan for everything `azurelocal-training` needs to become. It
 
 ## 1. What we are building
 
-`azurelocal-training` is the home for **Azure Local operator training** delivered in four modes:
+`azurelocal-training` is the home for **Azure Local operator training** delivered in three modes:
 
 | Mode | Format | Key artifacts |
 |---|---|---|
-| **AI-led on-demand** | AI tutor bot — interactive, conversational, any time | Claude-powered web app, lab content, IaC templates |
-| **On-demand self-paced** | AI-narrated video lessons + slide decks | YouTube-hosted videos, PowerPoint, lab guides |
 | **In-person / on-site** | Instructor-led workshop, 2–4 days | Slide decks, lab guides, IaC lab templates, delivery guides |
 | **Online live** | Virtual instructor-led, scheduled sessions | Same as in-person, delivered remotely via Teams/Zoom |
+| **On-demand self-paced** | AI-narrated video lessons + slide decks + **interactive AI tutor** (Claude-powered) that teaches and guides through labs | YouTube-hosted videos, PowerPoint, lab guides, Next.js + Claude API web app |
 
-The documentation site at `training.azurelocal.cloud` is the **marketing and reference layer** — course overviews, lab guides participants reference during workshops, and public information. The core on-demand experience is the **AI tutor bot**, not a video library.
+The documentation site at `training.azurelocal.cloud` is the **marketing and reference layer** — course overviews, lab guides participants reference during workshops, and public information. The on-demand experience pairs AI-narrated video with an interactive AI tutor — both are delivered as part of the same self-paced format.
 
 ---
 

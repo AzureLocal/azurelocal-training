@@ -10,7 +10,7 @@ Every lab in this curriculum can run in **three target environments**. We provid
 
 A nested-virtualization Azure Local lab built inside an Azure VM. No on-premises hardware required.
 
-- **Use for:** self-paced learners, AI-led on-demand, online live workshops where students don't have lab hardware
+- **Use for:** on-demand self-paced learners, online live workshops where students don't have lab hardware
 - **Built by:** our Bicep templates in [`labs/iac/`](https://github.com/AzureLocal/azurelocal-training/tree/main/labs/iac)
 - **Cost:** the student's (or workshop's) Azure subscription
 - **Prerequisites:** Azure subscription, contributor access, quota for the workshop's VM SKU

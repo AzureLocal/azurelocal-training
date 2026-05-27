@@ -1,59 +1,62 @@
 # Lab Environment Setup
 
-Every lab in this curriculum supports **two environment models**. Pick the one that matches your situation before starting.
+Every lab in this curriculum can run in **three target environments**. We provide the lab building solutions — Bicep, Terraform, and PowerShell — and either the student or the lab moderator deploys them depending on the delivery format.
 
 ---
 
-## Option A: Customer hardware (real Azure Local cluster)
+## Target environments
 
-For students or teams with access to a physical Azure Local cluster.
+### A. Azure (cloud-hosted)
 
-**Prerequisites:**
+A nested-virtualization Azure Local lab built inside an Azure VM. No on-premises hardware required.
 
-- Azure Local cluster deployed and Arc-registered
-- Azure subscription connected to the cluster
-- Contributor or higher access on the cluster resource group
-- Credentials for a cluster node (local admin or domain account)
+- **Use for:** self-paced learners, AI-led on-demand, online live workshops where students don't have lab hardware
+- **Built by:** our Bicep templates in [`labs/iac/`](https://github.com/AzureLocal/azurelocal-training/tree/main/labs/iac)
+- **Cost:** the student's (or workshop's) Azure subscription
+- **Prerequisites:** Azure subscription, contributor access, quota for the workshop's VM SKU
 
-**Use this when:** the student is already an operator on a production or pilot cluster, or the training is delivered on-site at a customer location with their hardware.
+### B. Physical Hyper-V server (nested environment)
+
+A student's or customer's existing physical Hyper-V server runs the lab as nested VMs. The lab solution is shipped as PowerShell + DSC + Bicep-equivalent ARM templates that target the local host instead of Azure.
+
+- **Use for:** students with hardware already on a Hyper-V host, customers who want labs on-prem without cloud cost, instructor-provided physical lab kit at an in-person workshop
+- **Built by:** PowerShell scripts in [`labs/iac/onprem/`](https://github.com/AzureLocal/azurelocal-training/tree/main/labs/iac) (planned)
+- **Cost:** none beyond the existing hardware
+- **Prerequisites:** physical Hyper-V host with nested virtualization enabled, sufficient RAM/CPU/storage for the lab's VMs
+
+### C. Actual Azure Local hardware
+
+The student or customer's own production or pilot Azure Local cluster.
+
+- **Use for:** customers running Azure Local in production who want operators trained against real hardware, on-site delivery at a customer location
+- **Built by:** N/A — environment already exists
+- **Cost:** none beyond existing cluster
+- **Prerequisites:** Azure Local cluster deployed and Arc-registered, contributor access on the cluster resource group, credentials for a cluster node
 
 ---
 
-## Option B: Provided lab building solutions
+## Deployment patterns
 
-When customer hardware isn't available, the workshop provides Bicep / Terraform templates that build a complete lab environment in Azure on demand. There are **two deployment patterns**:
+Whichever environment is chosen, the lab is provisioned in one of two patterns:
 
-### B.1 — Student-deployed (self-guided / on-demand)
+### Student-deployed (self-guided / on-demand)
 
-The student deploys their own lab environment by running a provided Bicep template against their own Azure subscription. Used for the on-demand AI tutor classes and the self-paced video curriculum.
+The student runs the provided template against their own subscription or hardware. Used for on-demand and AI-led classes and self-paced video curriculum.
 
 - Templates live under [`labs/iac/`](https://github.com/AzureLocal/azurelocal-training/tree/main/labs/iac)
-- Each module has its own template variant where applicable
-- A shared base environment at [`labs/iac/shared/`](https://github.com/AzureLocal/azurelocal-training/tree/main/labs/iac/shared) provisions the common substrate; module-specific templates layer on top
-- Includes a `cleanup.ps1` per template so resources can be destroyed when the lab ends
+- A shared base at [`labs/iac/shared/`](https://github.com/AzureLocal/azurelocal-training/tree/main/labs/iac/shared) provisions the common substrate; per-module templates layer on top
+- Each template includes a `cleanup.ps1` so resources can be destroyed when the lab ends
 
-**Student prerequisites:**
+### Moderator-deployed (instructor-led, in-person)
 
-- Azure subscription (their own) with contributor access
-- `az` CLI installed and authenticated
-- Quota for the workshop's required VM SKUs (typically `Standard_E16s_v5` or similar)
-- `bicep` CLI available (`az bicep install`)
+For in-person workshops, the lab moderator deploys one shared environment or a per-participant batch ahead of time. Students consume the environment without managing infrastructure.
 
-### B.2 — Moderator-deployed (instructor-led, in-person)
-
-For in-person workshops, the lab moderator deploys one shared environment (or a per-participant batch) ahead of time. Students consume the environment without managing infrastructure.
-
-The same templates power this — the moderator runs them in batch with a participant-count parameter, distributes credentials, and runs cleanup at the end of the workshop.
-
-**Moderator prerequisites:**
-
-- A dedicated workshop Azure subscription with quota for `participantCount × VM SKU`
-- Service principal or managed identity with Contributor on the workshop RG
-- The shared base template (`labs/iac/shared/lab-environment.bicep`) plus the module-specific templates the workshop will cover
+- The same templates power this — the moderator runs them with a `participantCount` parameter
+- Moderator distributes credentials at the start of the workshop and runs cleanup at the end
 
 ---
 
-## Lab Index
+## Lab index
 
 Lab guides are mapped 1:1 to modules where applicable. See the individual module pages for the lab content.
 

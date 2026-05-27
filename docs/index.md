@@ -108,12 +108,13 @@ The four delivery formats are:
 
 ## Hands-On Labs
 
-Every lab supports **two environment options**:
+Every lab supports **three target environments**, all deployed from the lab building solutions we provide:
 
-- **Customer hardware** — labs run against a customer's own Azure Local cluster
-- **Provided lab building solutions** — Bicep / Terraform templates we provide that build a lab environment in Azure on demand, deployed by the student (self-guided / on-demand classes) or by the lab moderator (in-person workshops)
+- **Azure (cloud-hosted)** — nested-virt Azure Local lab inside an Azure VM (Bicep)
+- **Physical Hyper-V server** — student's or customer's existing physical host running the lab as nested VMs
+- **Actual Azure Local hardware** — student's or customer's own Azure Local cluster
 
-See [Lab Environment Setup](labs/index.md) for full lab list and setup instructions.
+Any of the three can be deployed by the student (self-guided / on-demand) or by the lab moderator (in-person workshops). See [Lab Environment Setup](labs/index.md) for full lab list and setup instructions.
 
 ---
 

@@ -138,8 +138,23 @@ Additional agents are planned per the [strategic plan](repo-management/training-
 
 - `training-content-author` (model: sonnet) — Azure Local training content authoring; workshop modules, lab guides, MkDocs nav and structure
 
-User-level agents (available in every repo): triage-lookup, markdown-prose-editor, azurelocal-domain-expert, mkdocs-material-doctor, turner-module-scaffold-engineer, mms-2026-demo-presenter.
+User-level agents (every repo): `triage-lookup`, `markdown-prose-editor`, `azurelocal-domain-expert`, `mkdocs-material-doctor`, `turner-module-scaffold-engineer`, `mms-2026-demo-presenter`.
+
+Platform repo agents (when working in `D:\git\platform`): `orchestration-pm`, `security-waf-caf`, `terraform-validator`, `bicep-validator`, `arm-validator`, `ansible-linter`, `powershell-linter`, `reviewer`, `security-reviewer`, `documenter`, `coder`, `planner`, `operator`, `investigator`, `test-writer`, `router`.
 
 ## Owner
 
 Kris Turner — kristopherjturner@outlook.com
+
+
+---
+
+## HCS Orchestration Profile
+
+**Validation profile:** docs — see `D:\git\platform\profiles\docs.yaml`
+
+This repo is a **pilot** for the `docs` type in the HCS multi-agent orchestration system.
+Run `/dispatch docs` (or `/dispatch` for all pilots) to validate this repo.
+
+**Repo-specific notes for validators:**
+MkDocs Material site. markdownlint-cli2 on all .md. MkDocs admonition syntax only (not GitHub blockquotes). Placeholder syntax <subscription-id> / <cluster-name> for values.

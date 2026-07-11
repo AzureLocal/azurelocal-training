@@ -10,10 +10,15 @@ if (-not $filePath) { exit 0 }
 
 $normalizedPath = $filePath.Replace('\', '/').ToLower()
 
+# Add or remove paths as needed for your repo
 $blocked = @(
     '/.git/',
-    '/site/',
-    '/.env'
+    '/node_modules/',
+    '/dist/',
+    '/.env',
+    '/dist-ssr/',
+    '/.next/',
+    '/build/'
 )
 
 foreach ($b in $blocked) {

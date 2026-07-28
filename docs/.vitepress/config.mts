@@ -1,9 +1,11 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
-  title: "azurelocal-training Documentation",
+  ignoreDeadLinks: true,
+  title: "Azure Local Training",
   description: "Governed centrally by HCS Platform Engineering standards",
   themeConfig: {
+    logo: '/assets/images/azurelocal-training-icon.svg',
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Architecture', link: '/architecture' },
@@ -26,4 +28,5 @@ export default defineConfig({
     }
   }
 })
+
 

@@ -2,9 +2,10 @@
 
 **Level:** L300 | **Duration:** 3 hours | **Prerequisites:** Module 14 | **Hands-on:** Lab
 
-!!! note "Module Status"
-    Framework module — content scope under research.
-
+> [!NOTE]
+> **Module Status**
+> Framework module — content scope under research.
+>
 ## Learning Objectives (tentative)
 
 - Describe Azure AI Foundry Local and its value for sovereign / low-latency AI workloads

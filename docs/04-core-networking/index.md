@@ -2,9 +2,10 @@
 
 **Level:** L300 | **Duration:** 4 hours | **Prerequisites:** Module 06 | **Hands-on:** Lab
 
-!!! note "Module Status"
-    Framework module — content in development.
-
+> [!NOTE]
+> **Module Status**
+> Framework module — content in development.
+>
 ## Learning Objectives
 
 - Configure Network ATC intents (management, compute, storage)

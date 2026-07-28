@@ -2,9 +2,10 @@
 
 **Level:** L200 | **Duration:** 2 hours | **Prerequisites:** Module 00 | **Hands-on:** Presentation + design exercise
 
-!!! note "Module Status"
-    Framework module — content in development.
-
+> [!NOTE]
+> **Module Status**
+> Framework module — content in development.
+>
 ## Learning Objectives
 
 - Plan an Azure Local deployment given workload, capacity, and connectivity requirements

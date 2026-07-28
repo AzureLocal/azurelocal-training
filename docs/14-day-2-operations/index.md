@@ -2,9 +2,10 @@
 
 **Level:** L300 | **Duration:** 4 hours | **Prerequisites:** Modules 05–07 | **Hands-on:** Lab
 
-!!! note "Module Status"
-    Framework module — content in development.
-
+> [!NOTE]
+> **Module Status**
+> Framework module — content in development.
+>
 ## Learning Objectives
 
 - Use Azure Update Manager to assess, schedule, and apply updates

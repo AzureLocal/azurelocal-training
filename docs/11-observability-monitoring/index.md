@@ -2,9 +2,10 @@
 
 **Level:** L200–L300 | **Duration:** 3 hours | **Prerequisites:** Module 03 | **Hands-on:** Lab
 
-!!! note "Module Status"
-    Framework module — content in development.
-
+> [!NOTE]
+> **Module Status**
+> Framework module — content in development.
+>
 ## Learning Objectives
 
 - Deploy and configure the Azure Monitor Agent on Azure Local nodes

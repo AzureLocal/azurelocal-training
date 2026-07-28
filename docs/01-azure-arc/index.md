@@ -2,9 +2,10 @@
 
 **Level:** L300 | **Duration:** 3 hours | **Prerequisites:** Module 03 | **Hands-on:** Demo
 
-!!! note "Module Status"
-    Framework module — content in development.
-
+> [!NOTE]
+> **Module Status**
+> Framework module — content in development.
+>
 ## Learning Objectives
 
 - Explain the Azure Arc architecture as it applies to Azure Local infrastructure

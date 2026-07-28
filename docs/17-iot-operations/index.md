@@ -2,9 +2,10 @@
 
 **Level:** L300 | **Duration:** 3 hours | **Prerequisites:** Module 14 | **Hands-on:** Lab
 
-!!! note "Module Status"
-    Framework module — content scope under research.
-
+> [!NOTE]
+> **Module Status**
+> Framework module — content scope under research.
+>
 ## Learning Objectives (tentative)
 
 - Describe Azure IoT Operations and its role on Azure Local

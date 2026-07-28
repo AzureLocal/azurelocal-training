@@ -2,9 +2,10 @@
 
 **Level:** L300 | **Duration:** 5 hours | **Prerequisites:** Module 07 | **Hands-on:** Lab
 
-!!! note "Module Status"
-    Framework module — content in development.
-
+> [!NOTE]
+> **Module Status**
+> Framework module — content in development.
+>
 Once the cluster-deployment workflow completes (Module 07), a distinct set of operator tasks must be done before the cluster is ready for workloads. This module mirrors **Phase 06: Post-Deployment Cluster Configuration** in the [azurelocal.cloud implementation guide](https://azurelocal.cloud/docs/next/implementation/04-cluster-deployment/phase-06-post-deployment/).
 
 ## Learning Objectives

@@ -2,9 +2,10 @@
 
 **Level:** L300 | **Duration:** 2 hours | **Prerequisites:** Module 05 | **Hands-on:** Presentation only
 
-!!! warning "Placeholder Module"
-    This module is a placeholder for enterprise customers still using SCVMM. It is not part of the standard curriculum. Content will be developed when customer demand confirms the need.
-
+> [!WARNING]
+> **Placeholder Module**
+> This module is a placeholder for enterprise customers still using SCVMM. It is not part of the standard curriculum. Content will be developed when customer demand confirms the need.
+>
 ## Learning Objectives (tentative)
 
 - Describe SCVMM coexistence scenarios with Azure Local

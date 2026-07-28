@@ -2,9 +2,10 @@
 
 **Level:** L300 | **Duration:** 4 hours | **Prerequisites:** Module 07 | **Hands-on:** Lab
 
-!!! note "Module Status"
-    Framework module — content in development. **This is Arc-managed SDN for Azure Local — not SDN Express / traditional SDN.**
-
+> [!NOTE]
+> **Module Status**
+> Framework module — content in development. **This is Arc-managed SDN for Azure Local — not SDN Express / traditional SDN.**
+>
 ## Learning Objectives
 
 - Describe Arc-managed SDN architecture for Azure Local

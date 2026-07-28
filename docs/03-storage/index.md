@@ -2,9 +2,10 @@
 
 **Level:** L300 | **Duration:** 4 hours | **Prerequisites:** Module 05 | **Hands-on:** Lab
 
-!!! note "Module Status"
-    Framework module — content in development.
-
+> [!NOTE]
+> **Module Status**
+> Framework module — content in development.
+>
 ## Learning Objectives
 
 - Describe the Storage Spaces Direct (S2D) architecture

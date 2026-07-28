@@ -2,9 +2,10 @@
 
 **Level:** L100 | **Duration:** 2 hours | **Prerequisites:** None | **Hands-on:** Presentation + optional demo
 
-!!! note "Module Status"
-    Framework module — content in development.
-
+> [!NOTE]
+> **Module Status**
+> Framework module — content in development.
+>
 ## Learning Objectives
 
 - Explain what Azure Local is and how it differs from Windows Server and the legacy Azure Stack HCI

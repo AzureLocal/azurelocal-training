@@ -2,9 +2,10 @@
 
 **Level:** L300 | **Duration:** 3 hours | **Prerequisites:** Modules 02, 05 | **Hands-on:** Lab/Demo
 
-!!! note "Module Status"
-    Framework module — content in development.
-
+> [!NOTE]
+> **Module Status**
+> Framework module — content in development.
+>
 ## Learning Objectives
 
 - Plan a migration from VMware vSphere to Azure Local

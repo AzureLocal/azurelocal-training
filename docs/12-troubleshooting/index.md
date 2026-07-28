@@ -2,9 +2,10 @@
 
 **Level:** L300 | **Duration:** 4 hours | **Prerequisites:** Modules 05–08, 10 | **Hands-on:** Lab/Demo
 
-!!! note "Module Status"
-    Framework module — content in development.
-
+> [!NOTE]
+> **Module Status**
+> Framework module — content in development.
+>
 ## Learning Objectives
 
 - Diagnose Arc VM and Hyper-V-level issues

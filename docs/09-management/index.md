@@ -2,9 +2,10 @@
 
 **Level:** L200 | **Duration:** 3 hours | **Prerequisites:** Module 02 | **Hands-on:** Lab
 
-!!! note "Module Status"
-    Framework module — content in development.
-
+> [!NOTE]
+> **Module Status**
+> Framework module — content in development.
+>
 ## Learning Objectives
 
 - Manage Azure Local clusters through the Azure Portal as the primary management plane

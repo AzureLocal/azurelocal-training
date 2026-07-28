@@ -2,9 +2,10 @@
 
 **Level:** L300 | **Duration:** 5 hours | **Prerequisites:** Modules 03–04 | **Hands-on:** Lab
 
-!!! note "Module Status"
-    Framework module — content in development. This module is a major expansion vs. the legacy 2-hour security overview.
-
+> [!NOTE]
+> **Module Status**
+> Framework module — content in development. This module is a major expansion vs. the legacy 2-hour security overview.
+>
 ## Learning Objectives
 
 - Apply Zero Trust principles to Azure Local

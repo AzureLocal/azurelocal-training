@@ -2,9 +2,10 @@
 
 ![Azure Local Operator Training](assets/images/azurelocal-training-banner.svg)
 
-!!! warning "Under Construction"
-    This training curriculum is actively being developed. Module framework is in place. Lab guides, slide decks, IaC templates, and the AI tutor are in progress.
-
+> [!WARNING]
+> **Under Construction**
+> This training curriculum is actively being developed. Module framework is in place. Lab guides, slide decks, IaC templates, and the AI tutor are in progress.
+>
 ## Overview
 
 A comprehensive, hands-on training curriculum for infrastructure operators managing Azure Local clusters through the Azure Arc management plane. The curriculum covers everything from initial cluster planning and cloud deployment through day-2 operations, security, hybrid integration, and advanced workloads (AKS, AVD, IoT Operations, AI Foundry Local).

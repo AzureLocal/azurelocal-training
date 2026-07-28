@@ -2,9 +2,10 @@
 
 **Level:** L200–L300 | **Duration:** 6 hours | **Prerequisites:** Modules 00–06 | **Hands-on:** Lab
 
-!!! note "Module Status"
-    Framework module — content in development.
-
+> [!NOTE]
+> **Module Status**
+> Framework module — content in development.
+>
 This module covers the end-to-end Azure Local cluster deployment workflow. The cluster lands at the end of this module ready for the post-deployment cluster configuration in Module 08.
 
 Source of truth: [azurelocal.cloud — Implementation Guide, Part 4: Cluster Deployment](https://azurelocal.cloud/docs/next/implementation/04-cluster-deployment/).

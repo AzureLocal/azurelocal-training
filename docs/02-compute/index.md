@@ -2,9 +2,10 @@
 
 **Level:** L200–L300 | **Duration:** 5 hours | **Prerequisites:** Module 04 | **Hands-on:** Lab
 
-!!! note "Module Status"
-    Framework module — content in development.
-
+> [!NOTE]
+> **Module Status**
+> Framework module — content in development.
+>
 ## Learning Objectives
 
 - Describe the Hyper-V host platform on Azure Local
